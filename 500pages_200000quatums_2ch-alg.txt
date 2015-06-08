@@ -1,0 +1,604 @@
+I will go to read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+I read!
+Handle creation interrupts at time, 139000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P1.mem opened
+.There is no memory to read, the program goes to the end.
+P1 terminated at 291050with total cycles: 47000and page faults100
+Handle creation interrupts at time, 304000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P2.mem opened
+.There is no memory to read, the program goes to the end.
+P2 terminated at 503050with total cycles: 94000and page faults100
+Handle creation interrupts at time, 560000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P3.mem opened
+.Handle creation interrupts at time, 626000 process name is P3
+File ./Testdata/dataL/P4.mem opened
+.Handle creation interrupts at time, 773000 process name is P3
+There is no memory to read, the program goes to the end.
+P3 terminated at 883704with total cycles: 187000and page faults100
+File ./Testdata/dataL/P5.mem opened
+.Handle creation interrupts at time, 886000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P6.mem opened
+.Handle creation interrupts at time, 1000000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P7.mem opened
+.Handle creation interrupts at time, 1013000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P8.mem opened
+.Handle creation interrupts at time, 1047000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P9.mem opened
+.Handle creation interrupts at time, 1086000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P10.mem opened
+.Handle creation interrupts at time, 1165000 process name is P4
+Handle creation interrupts at time, 1217000 process name is P4
+Handle creation interrupts at time, 1278000 process name is P4
+File ./Testdata/dataL/P11.mem opened
+.File ./Testdata/dataL/P12.mem opened
+.File ./Testdata/dataL/P13.mem opened
+.There is no memory to read, the program goes to the end.
+P4 terminated at 1377489with total cycles: 259000and page faults100
+Handle creation interrupts at time, 1391000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P14.mem opened
+.Handle creation interrupts at time, 1569000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P15.mem opened
+.Handle creation interrupts at time, 1600000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P16.mem opened
+.Handle creation interrupts at time, 1786000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P17.mem opened
+.Handle creation interrupts at time, 1860000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P18.mem opened
+.Handle creation interrupts at time, 1939000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P19.mem opened
+.Handle creation interrupts at time, 2147000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P20.mem opened
+.Handle creation interrupts at time, 2286000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P21.mem opened
+.Handle creation interrupts at time, 2556000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P22.mem opened
+.Handle creation interrupts at time, 2813000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P23.mem opened
+.Handle creation interrupts at time, 2913000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P24.mem opened
+.Handle creation interrupts at time, 3069000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P25.mem opened
+.Handle creation interrupts at time, 3100000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P26.mem opened
+.Handle creation interrupts at time, 3417000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P27.mem opened
+.Handle creation interrupts at time, 3439000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P28.mem opened
+.Handle creation interrupts at time, 3469000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P29.mem opened
+.Handle creation interrupts at time, 3508000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P30.mem opened
+.Handle creation interrupts at time, 3534000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P31.mem opened
+.Handle creation interrupts at time, 3721000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P32.mem opened
+.Handle creation interrupts at time, 4039000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P33.mem opened
+.Handle creation interrupts at time, 4213000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P34.mem opened
+.Handle creation interrupts at time, 4582000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P35.mem opened
+.Handle creation interrupts at time, 4952000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P36.mem opened
+.Handle creation interrupts at time, 5017000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P37.mem opened
+.Handle creation interrupts at time, 5360000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P38.mem opened
+.Handle creation interrupts at time, 5452000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P39.mem opened
+.Handle creation interrupts at time, 5478000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P40.mem opened
+.Handle creation interrupts at time, 5608000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P41.mem opened
+.Handle creation interrupts at time, 5852000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P42.mem opened
+.Handle creation interrupts at time, 6060000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P43.mem opened
+.Handle creation interrupts at time, 6104000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P44.mem opened
+.Handle creation interrupts at time, 6108000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P45.mem opened
+.Handle creation interrupts at time, 6434000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P46.mem opened
+.Handle creation interrupts at time, 6586000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P47.mem opened
+.Handle creation interrupts at time, 6600000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P48.mem opened
+.Handle creation interrupts at time, 6934000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P49.mem opened
+.Handle creation interrupts at time, 7013000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P50.mem opened
+.Handle creation interrupts at time, 7147000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P51.mem opened
+.Handle creation interrupts at time, 7156000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P52.mem opened
+.Handle creation interrupts at time, 7159999 process name is IDLE_PROCESS
+File ./Testdata/dataL/P53.mem opened
+.Handle creation interrupts at time, 7259999 process name is IDLE_PROCESS
+File ./Testdata/dataL/P54.mem opened
+.Handle creation interrupts at time, 7473000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P55.mem opened
+.Handle creation interrupts at time, 7581999 process name is IDLE_PROCESS
+File ./Testdata/dataL/P56.mem opened
+.Handle creation interrupts at time, 7613000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P57.mem opened
+.Handle creation interrupts at time, 7986000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P58.mem opened
+.Handle creation interrupts at time, 8069000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P59.mem opened
+.Handle creation interrupts at time, 8304000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P60.mem opened
+.Handle creation interrupts at time, 8308000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P61.mem opened
+.Handle creation interrupts at time, 8369000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P62.mem opened
+.Handle creation interrupts at time, 8456000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P63.mem opened
+.Handle creation interrupts at time, 8473000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P64.mem opened
+.Handle creation interrupts at time, 8856000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P65.mem opened
+.Handle creation interrupts at time, 8869000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P66.mem opened
+.Handle creation interrupts at time, 8943000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P67.mem opened
+.Handle creation interrupts at time, 9065000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P68.mem opened
+.Handle creation interrupts at time, 9121000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P69.mem opened
+.Handle creation interrupts at time, 9221000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P70.mem opened
+.Handle creation interrupts at time, 9534000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P71.mem opened
+.Handle creation interrupts at time, 9665000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P72.mem opened
+.Handle creation interrupts at time, 9782000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P73.mem opened
+.Handle creation interrupts at time, 9813000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P74.mem opened
+.Handle creation interrupts at time, 9969000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P75.mem opened
+.Handle creation interrupts at time, 10073000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P76.mem opened
+.Handle creation interrupts at time, 10147000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P77.mem opened
+.Handle creation interrupts at time, 10226000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P78.mem opened
+.Handle creation interrupts at time, 10313000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P79.mem opened
+.Handle creation interrupts at time, 10513000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P80.mem opened
+.Handle creation interrupts at time, 10586000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P81.mem opened
+.Handle creation interrupts at time, 10747000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P82.mem opened
+.Handle creation interrupts at time, 10978000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P83.mem opened
+.Handle creation interrupts at time, 11104000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P84.mem opened
+.Handle creation interrupts at time, 11143000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P85.mem opened
+.Handle creation interrupts at time, 11213000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P86.mem opened
+.Handle creation interrupts at time, 11321000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P87.mem opened
+.Handle creation interrupts at time, 11847000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P88.mem opened
+.Handle creation interrupts at time, 11952000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P89.mem opened
+.Handle creation interrupts at time, 11986000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P90.mem opened
+.Handle creation interrupts at time, 12186000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P91.mem opened
+.Handle creation interrupts at time, 12339000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P92.mem opened
+.Handle creation interrupts at time, 12426000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P93.mem opened
+.Handle creation interrupts at time, 12460000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P94.mem opened
+.Handle creation interrupts at time, 12473000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P95.mem opened
+.Handle creation interrupts at time, 12573000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P96.mem opened
+.Handle creation interrupts at time, 12582000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P97.mem opened
+.Handle creation interrupts at time, 12713000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P98.mem opened
+.Handle creation interrupts at time, 12743000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P99.mem opened
+.Handle creation interrupts at time, 12869000 process name is IDLE_PROCESS
+File ./Testdata/dataL/P100.mem opened
+.There is no memory to read, the program goes to the end.
+P43 terminated at 86819601with total cycles: 1000and page faults880
+There is no memory to read, the program goes to the end.
+P6 terminated at 336405601with total cycles: 10000and page faults3786
+There is no memory to read, the program goes to the end.
+P16 terminated at 426258601with total cycles: 6000and page faults4657
+There is no memory to read, the program goes to the end.
+P91 terminated at 435187601with total cycles: 5000and page faults4457
+There is no memory to read, the program goes to the end.
+P59 terminated at 678460601with total cycles: 16000and page faults7160
+There is no memory to read, the program goes to the end.
+P19 terminated at 740678601with total cycles: 9000and page faults8054
+There is no memory to read, the program goes to the end.
+P17 terminated at 886524601with total cycles: 20000and page faults9686
+There is no memory to read, the program goes to the end.
+P88 terminated at 1096522601with total cycles: 13000and page faults11769
+There is no memory to read, the program goes to the end.
+P10 terminated at 1310032601with total cycles: 27000and page faults14517
+There is no memory to read, the program goes to the end.
+P11 terminated at 1382876601with total cycles: 30000and page faults15348
+There is no memory to read, the program goes to the end.
+P65 terminated at 1483879601with total cycles: 22000and page faults16248
+There is no memory to read, the program goes to the end.
+P69 terminated at 1490951615with total cycles: 26000and page faults16327
+There is no memory to read, the program goes to the end.
+P35 terminated at 1557652603with total cycles: 31000and page faults17226
+There is no memory to read, the program goes to the end.
+P45 terminated at 1605617601with total cycles: 27000and page faults17759
+There is no memory to read, the program goes to the end.
+P67 terminated at 1657299601with total cycles: 22000and page faults18332
+There is no memory to read, the program goes to the end.
+P64 terminated at 1747957603with total cycles: 25000and page faults19459
+There is no memory to read, the program goes to the end.
+P75 terminated at 2003904605with total cycles: 51000and page faults22635
+There is no memory to read, the program goes to the end.
+P49 terminated at 2187958604with total cycles: 34000and page faults25018
+There is no memory to read, the program goes to the end.
+P46 terminated at 2323550601with total cycles: 37000and page faults26768
+There is no memory to read, the program goes to the end.
+P8 terminated at 2388528601with total cycles: 41000and page faults27858
+There is no memory to read, the program goes to the end.
+P53 terminated at 3317303601with total cycles: 52000and page faults39816
+There is no memory to read, the program goes to the end.
+P9 terminated at 3397715601with total cycles: 70000and page faults41144
+There is no memory to read, the program goes to the end.
+P33 terminated at 3497626601with total cycles: 60000and page faults42326
+There is no memory to read, the program goes to the end.
+P60 terminated at 3669957602with total cycles: 64000and page faults44577
+There is no memory to read, the program goes to the end.
+P94 terminated at 3714919602with total cycles: 59000and page faults45144
+There is no memory to read, the program goes to the end.
+P72 terminated at 3804620601with total cycles: 75000and page faults46443
+There is no memory to read, the program goes to the end.
+P62 terminated at 3886544601with total cycles: 59000and page faults47634
+There is no memory to read, the program goes to the end.
+P23 terminated at 4009015601with total cycles: 103000and page faults49572
+There is no memory to read, the program goes to the end.
+P18 terminated at 4039980614with total cycles: 80000and page faults50086
+There is no memory to read, the program goes to the end.
+P99 terminated at 4085479601with total cycles: 64000and page faults50484
+There is no memory to read, the program goes to the end.
+P15 terminated at 4117482613with total cycles: 70000and page faults51274
+There is no memory to read, the program goes to the end.
+P80 terminated at 4292021601with total cycles: 79000and page faults53681
+There is no memory to read, the program goes to the end.
+P56 terminated at 4407784602with total cycles: 106000and page faults55537
+There is no memory to read, the program goes to the end.
+P52 terminated at 4432133601with total cycles: 72000and page faults55932
+There is no memory to read, the program goes to the end.
+P76 terminated at 4490212601with total cycles: 69000and page faults56819
+There is no memory to read, the program goes to the end.
+P55 terminated at 4491962601with total cycles: 92000and page faults56891
+There is no memory to read, the program goes to the end.
+P22 terminated at 4606830602with total cycles: 77000and page faults58966
+There is no memory to read, the program goes to the end.
+P83 terminated at 4655381601with total cycles: 102000and page faults59573
+There is no memory to read, the program goes to the end.
+P42 terminated at 4694419601with total cycles: 87000and page faults60339
+There is no memory to read, the program goes to the end.
+P32 terminated at 4736495609with total cycles: 105000and page faults61145
+There is no memory to read, the program goes to the end.
+P24 terminated at 4992050604with total cycles: 93000and page faults65744
+There is no memory to read, the program goes to the end.
+P79 terminated at 4996156620with total cycles: 121000and page faults65631
+There is no memory to read, the program goes to the end.
+P50 terminated at 5192973601with total cycles: 111000and page faults69332
+There is no memory to read, the program goes to the end.
+P40 terminated at 5233660601with total cycles: 112000and page faults70138
+There is no memory to read, the program goes to the end.
+P54 terminated at 5288449604with total cycles: 125000and page faults71148
+There is no memory to read, the program goes to the end.
+P13 terminated at 5295890601with total cycles: 110000and page faults71539
+There is no memory to read, the program goes to the end.
+P74 terminated at 5322293602with total cycles: 115000and page faults71778
+There is no memory to read, the program goes to the end.
+P87 terminated at 5361884605with total cycles: 119000and page faults72566
+There is no memory to read, the program goes to the end.
+P78 terminated at 5466758601with total cycles: 111000and page faults74765
+There is no memory to read, the program goes to the end.
+P27 terminated at 5624085633with total cycles: 111000and page faults78275
+There is no memory to read, the program goes to the end.
+P44 terminated at 5999865601with total cycles: 153000and page faults86358
+There is no memory to read, the program goes to the end.
+P96 terminated at 6027288602with total cycles: 150000and page faults86862
+There is no memory to read, the program goes to the end.
+P57 terminated at 6101839601with total cycles: 127000and page faults88628
+There is no memory to read, the program goes to the end.
+P30 terminated at 6103340607with total cycles: 145000and page faults88779
+There is no memory to read, the program goes to the end.
+P7 terminated at 6128951602with total cycles: 151000and page faults89548
+There is no memory to read, the program goes to the end.
+P48 terminated at 6147797603with total cycles: 155000and page faults89754
+There is no memory to read, the program goes to the end.
+P12 terminated at 6184379602with total cycles: 136000and page faults90899
+There is no memory to read, the program goes to the end.
+P28 terminated at 6258217602with total cycles: 136000and page faults92659
+There is no memory to read, the program goes to the end.
+P21 terminated at 6290848602with total cycles: 164000and page faults93578
+There is no memory to read, the program goes to the end.
+P98 terminated at 6362717601with total cycles: 158000and page faults95268
+There is no memory to read, the program goes to the end.
+P90 terminated at 6420991655with total cycles: 161000and page faults96895
+There is no memory to read, the program goes to the end.
+P89 terminated at 6425072605with total cycles: 146000and page faults97012
+There is no memory to read, the program goes to the end.
+P84 terminated at 6426594603with total cycles: 193000and page faults97067
+There is no memory to read, the program goes to the end.
+P29 terminated at 6486622601with total cycles: 143000and page faults99058
+There is no memory to read, the program goes to the end.
+P71 terminated at 6518673604with total cycles: 168000and page faults99909
+There is no memory to read, the program goes to the end.
+P5 terminated at 6530405604with total cycles: 157000and page faults100635
+There is no memory to read, the program goes to the end.
+P77 terminated at 6592728609with total cycles: 160000and page faults102356
+There is no memory to read, the program goes to the end.
+P34 terminated at 6669450622with total cycles: 185000and page faults105134
+There is no memory to read, the program goes to the end.
+P37 terminated at 6673515601with total cycles: 204000and page faults105253
+There is no memory to read, the program goes to the end.
+P38 terminated at 6691295601with total cycles: 164000and page faults105901
+There is no memory to read, the program goes to the end.
+P68 terminated at 6722796603with total cycles: 234000and page faults107033
+There is no memory to read, the program goes to the end.
+P85 terminated at 6748379601with total cycles: 197000and page faults108027
+There is no memory to read, the program goes to the end.
+P14 terminated at 6774219601with total cycles: 251000and page faults109408
+There is no memory to read, the program goes to the end.
+P86 terminated at 6806310601with total cycles: 187000and page faults110498
+There is no memory to read, the program goes to the end.
+P36 terminated at 6822981601with total cycles: 236000and page faults111378
+There is no memory to read, the program goes to the end.
+P31 terminated at 6828535649with total cycles: 202000and page faults111691
+There is no memory to read, the program goes to the end.
+P41 terminated at 6829782617with total cycles: 218000and page faults111685
+There is no memory to read, the program goes to the end.
+P47 terminated at 6830009627with total cycles: 206000and page faults111672
+There is no memory to read, the program goes to the end.
+P20 terminated at 6844069624with total cycles: 145000and page faults112619
+There is no memory to read, the program goes to the end.
+P66 terminated at 6847556626with total cycles: 194000and page faults112614
+There is no memory to read, the program goes to the end.
+P25 terminated at 6867860643with total cycles: 257000and page faults114041
+There is no memory to read, the program goes to the end.
+P92 terminated at 6877278605with total cycles: 220000and page faults114464
+There is no memory to read, the program goes to the end.
+P81 terminated at 6879804624with total cycles: 215000and page faults114666
+There is no memory to read, the program goes to the end.
+P95 terminated at 6880454603with total cycles: 255000and page faults114693
+There is no memory to read, the program goes to the end.
+P93 terminated at 6880990608with total cycles: 242000and page faults114738
+There is no memory to read, the program goes to the end.
+P97 terminated at 6884805668with total cycles: 251000and page faults115083
+There is no memory to read, the program goes to the end.
+P51 terminated at 6885563674with total cycles: 262000and page faults115240
+There is no memory to read, the program goes to the end.
+P61 terminated at 6886554155with total cycles: 248000and page faults115326
+There is no memory to read, the program goes to the end.
+P73 terminated at 6887245278with total cycles: 238000and page faults115390
+There is no memory to read, the program goes to the end.
+P82 terminated at 6887515474with total cycles: 232000and page faults115413
+There is no memory to read, the program goes to the end.
+P26 terminated at 6887747067with total cycles: 256000and page faults115629
+There is no memory to read, the program goes to the end.
+P100 terminated at 6887856763with total cycles: 262000and page faults115439
+There is no memory to read, the program goes to the end.
+P63 terminated at 6887876269with total cycles: 247000and page faults115500
+There is no memory to read, the program goes to the end.
+P70 terminated at 6887929469with total cycles: 243000and page faults115506
+There is no memory to read, the program goes to the end.
+P58 terminated at 6887985476with total cycles: 233000and page faults115545
+There is no memory to read, the program goes to the end.
+P39 terminated at 6888013799with total cycles: 252000and page faults115611
+Simulation finished at cycle 6888161800 with total idle time: 6868422594
+The conclusion:
+P1 ends at291050, with47000 cycles for 1.5205s with100 page faults
+P10 ends at1310032601, with27000 cycles for 13089.5s with14517 page faults
+P100 ends at6887856763, with262000 cycles for 68749.9s with115439 page faults
+P11 ends at1382876601, with30000 cycles for 13817.1s with15348 page faults
+P12 ends at6184379602, with136000 cycles for 61831.6s with90899 page faults
+P13 ends at5295890601, with110000 cycles for 52946.1s with71539 page faults
+P14 ends at6774219601, with251000 cycles for 67728.3s with109408 page faults
+P15 ends at4117482613, with70000 cycles for 41159.1s with51274 page faults
+P16 ends at426258601, with6000 cycles for 4246.59s with4657 page faults
+P17 ends at886524601, with20000 cycles for 8847.39s with9686 page faults
+P18 ends at4039980614, with80000 cycles for 40381.2s with50086 page faults
+P19 ends at740678601, with9000 cycles for 7387.4s with8054 page faults
+P2 ends at503050, with94000 cycles for 1.9905s with100 page faults
+P20 ends at6844069624, with145000 cycles for 68419.2s with112619 page faults
+P21 ends at6290848602, with164000 cycles for 62885.6s with93578 page faults
+P22 ends at4606830602, with77000 cycles for 46042.7s with58966 page faults
+P23 ends at4009015601, with103000 cycles for 40062s with49572 page faults
+P24 ends at4992050604, with93000 cycles for 49891.4s with65744 page faults
+P25 ends at6867860643, with257000 cycles for 68647.9s with114041 page faults
+P26 ends at6887747067, with256000 cycles for 68846.5s with115629 page faults
+P27 ends at5624085633, with111000 cycles for 56206.7s with78275 page faults
+P28 ends at6258217602, with136000 cycles for 62547.8s with92659 page faults
+P29 ends at6486622601, with143000 cycles for 64831.5s with99058 page faults
+P3 ends at883704, with187000 cycles for 3.23704s with100 page faults
+P30 ends at6103340607, with145000 cycles for 60998.3s with88779 page faults
+P31 ends at6828535649, with202000 cycles for 68250s with111691 page faults
+P32 ends at4736495609, with105000 cycles for 47327.7s with61145 page faults
+P33 ends at3497626601, with60000 cycles for 34935.9s with42326 page faults
+P34 ends at6669450622, with185000 cycles for 66652.4s with105134 page faults
+P35 ends at1557652603, with31000 cycles for 15530.7s with17226 page faults
+P36 ends at6822981601, with236000 cycles for 68180.3s with111378 page faults
+P37 ends at6673515601, with204000 cycles for 66685s with105253 page faults
+P38 ends at6691295601, with164000 cycles for 66859.4s with105901 page faults
+P39 ends at6888013799, with252000 cycles for 68825.6s with115611 page faults
+P4 ends at1377489, with259000 cycles for 7.51489s with100 page faults
+P40 ends at5233660601, with112000 cycles for 52281.8s with70138 page faults
+P41 ends at6829782617, with218000 cycles for 68241.7s with111685 page faults
+P42 ends at4694419601, with87000 cycles for 46885.7s with60339 page faults
+P43 ends at86819601, with1000 cycles for 807.596s with880 page faults
+P44 ends at5999865601, with153000 cycles for 59937.6s with86358 page faults
+P45 ends at1605617601, with27000 cycles for 15995.1s with17759 page faults
+P46 ends at2323550601, with37000 cycles for 23171.2s with26768 page faults
+P47 ends at6830009627, with206000 cycles for 68234.2s with111672 page faults
+P48 ends at6147797603, with155000 cycles for 61412s with89754 page faults
+P49 ends at2187958604, with34000 cycles for 21810.2s with25018 page faults
+P5 ends at6530405604, with157000 cycles for 65296.3s with100635 page faults
+P50 ends at5192973601, with111000 cycles for 51859.6s with69332 page faults
+P51 ends at6885563674, with262000 cycles for 68784.2s with115240 page faults
+P52 ends at4432133601, with72000 cycles for 44249.8s with55932 page faults
+P53 ends at3317303601, with52000 cycles for 33101.4s with39816 page faults
+P54 ends at5288449604, with125000 cycles for 52811.9s with71148 page faults
+P55 ends at4491962601, with92000 cycles for 44844.9s with56891 page faults
+P56 ends at4407784602, with106000 cycles for 44002s with55537 page faults
+P57 ends at6101839601, with127000 cycles for 60942.3s with88628 page faults
+P58 ends at6887985476, with233000 cycles for 68800s with115545 page faults
+P59 ends at678460601, with16000 cycles for 6703.92s with7160 page faults
+P6 ends at336405601, with10000 cycles for 3355.2s with3786 page faults
+P60 ends at3669957602, with64000 cycles for 36616.5s with44577 page faults
+P61 ends at6886554155, with248000 cycles for 68782.5s with115326 page faults
+P62 ends at3886544601, with59000 cycles for 38781.8s with47634 page faults
+P63 ends at6887876269, with247000 cycles for 68794.2s with115500 page faults
+P64 ends at1747957603, with25000 cycles for 17394.8s with19459 page faults
+P65 ends at1483879601, with22000 cycles for 14750.2s with16248 page faults
+P66 ends at6847556626, with194000 cycles for 68386.9s with112614 page faults
+P67 ends at1657299601, with22000 cycles for 16483.6s with18332 page faults
+P68 ends at6722796603, with234000 cycles for 67137.3s with107033 page faults
+P69 ends at1490951615, with26000 cycles for 14818.3s with16327 page faults
+P7 ends at6128951602, with151000 cycles for 61279.5s with89548 page faults
+P70 ends at6887929469, with243000 cycles for 68787.1s with115506 page faults
+P71 ends at6518673604, with168000 cycles for 65091.4s with99909 page faults
+P72 ends at3804620601, with75000 cycles for 37949.6s with46443 page faults
+P73 ends at6887245278, with238000 cycles for 68774.6s with115390 page faults
+P74 ends at5322293602, with115000 cycles for 53124.8s with71778 page faults
+P75 ends at2003904605, with51000 cycles for 19939.4s with22635 page faults
+P76 ends at4490212601, with69000 cycles for 44801.4s with56819 page faults
+P77 ends at6592728609, with160000 cycles for 65825.8s with102356 page faults
+P78 ends at5466758601, with111000 cycles for 54565.3s with74765 page faults
+P79 ends at4996156620, with121000 cycles for 49858.4s with65631 page faults
+P8 ends at2388528601, with41000 cycles for 23875.2s with27858 page faults
+P80 ends at4292021601, with79000 cycles for 42815.1s with53681 page faults
+P81 ends at6879804624, with215000 cycles for 68692.2s with114666 page faults
+P82 ends at6887515474, with232000 cycles for 68767.7s with115413 page faults
+P83 ends at4655381601, with102000 cycles for 46444s with59573 page faults
+P84 ends at6426594603, with193000 cycles for 64154.9s with97067 page faults
+P85 ends at6748379601, with197000 cycles for 67372.4s with108027 page faults
+P86 ends at6806310601, with187000 cycles for 67951s with110498 page faults
+P87 ends at5361884605, with119000 cycles for 53505.6s with72566 page faults
+P88 ends at1096522601, with13000 cycles for 10846.8s with11769 page faults
+P89 ends at6425072605, with146000 cycles for 64131.2s with97012 page faults
+P9 ends at3397715601, with70000 cycles for 33966.7s with41144 page faults
+P90 ends at6420991655, with161000 cycles for 64090.1s with96895 page faults
+P91 ends at435187601, with5000 cycles for 4230.02s with4457 page faults
+P92 ends at6877278605, with220000 cycles for 68649.4s with114464 page faults
+P93 ends at6880990608, with242000 cycles for 68685.6s with114738 page faults
+P94 ends at3714919602, with59000 cycles for 37024.6s with45144 page faults
+P95 ends at6880454603, with255000 cycles for 68679.8s with114693 page faults
+P96 ends at6027288602, with150000 cycles for 60147.2s with86862 page faults
+P97 ends at6884805668, with251000 cycles for 68722.2s with115083 page faults
+P98 ends at6362717601, with158000 cycles for 63500s with95268 page faults
+P99 ends at4085479601, with64000 cycles for 40727.4s with50484 page faults
+Total page faults:6887105
