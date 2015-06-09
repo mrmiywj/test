@@ -174,7 +174,7 @@ class Scheduler {
 	//interrupts' time and type ----> the detailed information the interrupt, such as the process name or the interrupted page name
 	map<interrupt_t, Interrupt> interrupts;
 	//The queues which stores the faulting, hanged, ready process.
-	deque<string> faultQueue, hangedQueue, hangedPage, readyQueue;
+	deque<string> faultQueue, readyQueue;
 	//blocked process
 	set<string> blockedQueue;
 
@@ -874,8 +874,7 @@ void Scheduler::handleTimerInterruption(long long time, string currentProcess) {
 
 bool Scheduler::handleInterrupts(long long time, string currentProcess) {
 	if (interrupts.size() == 0 && faultQueue.size() == 0
-			&& readyQueue.size() == 0 && blockedQueue.size() == 0
-			&& hangedQueue.size() == 0)
+			&& readyQueue.size() == 0 && blockedQueue.size() == 0)
 		return false;
 	/*cout<<"At cycle: "<< time<<endl;
 	map<interrupt_t, Interrupt>::iterator it = interrupts.begin();
@@ -897,17 +896,6 @@ void Scheduler::processTermination(long long time, string currentProcess) {
 		interrupts.erase(TimerInterrupt(rest));
 	}
 
-	//extract a process from hanged process
-	if (hangedQueue.size() != 0) {
-		if (memory->swapPage(time, hangedQueue[0], hangedPage[0])) {
-			blockedQueue.insert(hangedQueue[0]);
-			blockedPages[hangedQueue[0]] = hangedPage[0];
-
-			hangedQueue.pop_front();
-			hangedPage.pop_front();
-		}
-
-	}
 
 	cpu->ContextSwitch(IDLE, time + 1);
 }
@@ -943,12 +931,12 @@ void Scheduler::pgFault(long long time, string faultingProcess,
 
 		blockedPages[faultingProcess] = faultingPage;
 		cpu->ContextSwitch(IDLE, time);
-	} else {
+	} /*else {
 		printerror("5555");
 		hangedQueue.push_back(faultingProcess);
 
 		hangedPage.push_back(faultingPage);
-		/*cout<<"The memory slot is full!"<<endl;
+		cout<<"The memory slot is full!"<<endl;
 		for (deque<string>::iterator it = hangedQueue.begin(); it != hangedQueue.end(); it++)
 			cout<<(*it)<<"    ";
 		cout<<endl;
@@ -967,9 +955,9 @@ void Scheduler::pgFault(long long time, string faultingProcess,
 		for (deque<string>::iterator it = faultQueue.begin(); it != faultQueue.end(); it++)
 			cout<<*it<<"    ";
 		memory->debug();
-		cout<<endl;*/
+		cout<<endl;
 		cpu->ContextSwitch(IDLE, time);
-	}
+	}*/
 }
 
 void Scheduler::diskDiscardInterrupt(long long time)
