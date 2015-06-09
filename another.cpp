@@ -305,7 +305,7 @@ void CPU::simulate() {
 
 		//if the CPU is on a context switch,
 		if (currentProcessStartTime > currentTime) {
-			if (scheduler->cloeseInterrupt() - 1 < currentProcessStartTime){
+			if (scheduler->cloestInterrupt() - 1 < currentProcessStartTime){
 				idleCycle += scheduler->cloestInterrupt() - 1;
 				currentTime = scheduler->cloestInterrupt() - 1;
 				continue;
@@ -944,6 +944,7 @@ void Scheduler::pgFault(long long time, string faultingProcess,
 		blockedPages[faultingProcess] = faultingPage;
 		cpu->ContextSwitch(IDLE, time);
 	} else {
+		printerror("5555");
 		hangedQueue.push_back(faultingProcess);
 
 		hangedPage.push_back(faultingPage);
