@@ -30,6 +30,7 @@ typedef pair<long long, string> reverseAccessType;
 #define TimerInterrupt(t) make_pair(t,1)
 #define DiskInterrupt(t) make_pair(t,2)
 #define ProcessCreationInterrupt(t) make_pair(t,3)
+#define DiskDiscardInterrupt(t) make_pair(t,4)
 #define EOP "End of program"
 #define SOP "Start of program"
 #define IDLE "IDLE_PROCESS"
@@ -90,6 +91,23 @@ public:
 	virtual void unmarkBusy(string pgName) {
 		ERR
 	}
+
+
+
+	virtual int pgNumIncrease(){
+		ERR
+	}
+	virtual int pgNumDecrease(){
+		ERR
+	}
+	virtual void debug()
+	{
+		ERR
+	}
+	virtual int pageNum()
+	{
+		ERR
+	}
 };
 
 /*
@@ -114,12 +132,34 @@ public:
 	void erasewaiting(string page) {
 		waitingPages.erase(page);
 		mmu->unmarkBusy(page);
-		busyCount--;
 	}
 
 	bool fetch(long long time, string processName, string pgName);
 
 	bool swapPage(long long time, string faulingProcess, string faultingPage);
+	void kickOut(long long time);
+	void pgNumIncrease()
+	{
+		mmu->pgNumIncrease();
+	}
+	void pgNumDecrease()
+	{
+		mmu->pgNumDecrease();
+	}
+	void debug()
+	{
+		set<string>::iterator it;
+		cout<<"The waiting pages are:"<<endl;
+		for (it = waitingPages.begin(); it != waitingPages.end(); it ++)
+			cout<<*it<<"    ";
+		cout<<endl;
+		cout<<"The busy count is: "<<busyCount<<endl;
+		mmu->debug();
+	}
+	int pgNum()
+	{
+		return mmu->pageNum();
+	}
 };
 
 /*
@@ -158,6 +198,8 @@ public:
 
 	void creationInterrupt(long long time, string processName);
 	void diskInterrupt(long long time, string pgName);
+	void diskDiscardInterrupt(long long time);
+	void handleDiskDiscardInterrupt(long long time);
 	void handleCreationInterrupttion(long long time, string currentProcess);
 	void handleDiskInterruption(long long time, string currentProcess);
 	void handleTimerInterruption(long long time, string currentProcess);
@@ -263,6 +305,11 @@ void CPU::simulate() {
 
 		//if the CPU is on a context switch,
 		if (currentProcessStartTime > currentTime) {
+			if (scheduler->cloeseInterrupt() - 1 < currentProcessStartTime){
+				idleCycle += scheduler->cloestInterrupt() - 1;
+				currentTime = scheduler->cloestInterrupt() - 1;
+				continue;
+			}
 			++idleCycle;
 			continue;
 		}
@@ -355,13 +402,39 @@ class FIFOMemory: MemoryBase {
 	map<string, bool> pageMarked;
 	//FIFO pages.
 	deque<string> pages;
+	int pgNum;
 public:
+	void debug()
+	{
+		cout<<"The page num is: "<<pgNum<<endl;
+		cout<<"PageMarked: "<<endl;
+		map<string,bool>::iterator it;
+		for (it = pageMarked.begin(); it != pageMarked.end(); it++)
+			cout<<it->first<<' '<<it->second<<'\t';
+		cout<<endl;
+		cout<<"Page pool:"<<endl;
+		for (deque<string>::iterator iter = pages.begin() ; iter != pages.end() ; iter ++)
+			cout<<*iter<<'\t';
+		cout<<endl;
+	}
 	bool memoryFull();
 	bool accessPage(long long time, string pgName);
 	bool insertPage(long long time, string pgName);
 	bool kickOut(long long time);
 	void markBusy(string pgName);
 	void unmarkBusy(string pgName);
+	int pgNumIncrease()
+	{
+		return ++pgNum;
+	}
+	int pgNumDecrease()
+	{
+		return --pgNum;
+	}
+	int pageNum()
+	{
+		return pgNum;
+	}
 };
 
 bool FIFOMemory::accessPage(long long time, string pgName) {
@@ -369,20 +442,21 @@ bool FIFOMemory::accessPage(long long time, string pgName) {
 		return false;
 	} else if (pageTime[pgName] > time) {
 		return false;
-	}
+	} else if (pageMarked[pgName])
+		return false;
 	return true;
 }
 
 bool FIFOMemory::memoryFull() {
-	return (pages.size() == globalPages);
+	return (pgNum == globalPages);
 }
 
 bool FIFOMemory::insertPage(long long time, string pgName) {
-	if (memoryFull()) {
+	/*if (memoryFull()) {
 		cout << "!!!!!!You want to insert when the pages pool is full !!!"
 				<< endl;
 		exit(0);
-	}
+	}*/
 	pages.push_back(pgName);
 	pageTime[pgName] = time;
 	pageMarked[pgName] = false;
@@ -401,9 +475,8 @@ void FIFOMemory::unmarkBusy(string pgName) {
  * The main idea of this function is to kick out the header of the queue.
  */
 bool FIFOMemory::kickOut(long long time) {
-	if (!this->memoryFull())
-		return false;
-
+	/*if (!this->memoryFull())
+		return false;*/
 	deque<string>::iterator it = pages.begin();
 	while (pageMarked[(*it)] || pageTime[(*it)] > time) {
 		it++;
@@ -412,13 +485,16 @@ bool FIFOMemory::kickOut(long long time) {
 			printerror("Memory kick out reached end of the queue.");
 		}
 	}
-
+	//cout<<"The page which is kicked out is: "<<(*it)<<endl;
+	//cout<<"Now in the page pool is "<<endl;
 	string kickout = (*it);
 	pages.erase(it);
 
 	pageMarked.erase(pageMarked.find(kickout));
 	pageTime.erase(pageTime.find(kickout));
-
+	/*for (map<string, bool>::iterator it = pageMarked.begin(); it != pageMarked.end(); it++)
+		cout<<it->first<<' '<<it->second<<"\t";
+	cout<<endl;*/
 	return true;
 }
 
@@ -426,6 +502,7 @@ bool FIFOMemory::kickOut(long long time) {
 class LRUMemory: MemoryBase {
 	map<string, bool> pgMarked;
 	map<string, long long> pgAvailTime, pgAccessTime;
+	int pgNum;
 public:
 
 	bool memoryFull();
@@ -434,6 +511,18 @@ public:
 	bool kickOut(long long time);
 	void markBusy(string pgName);
 	void unmarkBusy(string pgName);
+	int pgNumIncrease()
+	{
+		return ++pgNum;
+	}
+	int pgNumDecrease()
+	{
+		return --pgNum;
+	}
+	int pageNum()
+	{
+		return pgNum;
+	}
 };
 
 void LRUMemory::markBusy(string pgName) {
@@ -448,6 +537,8 @@ bool LRUMemory::accessPage(long long time, string pgName) {
 	if (pgAvailTime.find(pgName) == pgAvailTime.end())
 		return false;
 	if (pgAvailTime[pgName] > time)
+		return false;
+	if (pgMarked[pgName])
 		return false;
 
 	if (pgAccessTime[pgName] < time) {
@@ -464,7 +555,7 @@ bool LRUMemory::insertPage(long long time, string pgName) {
 }
 
 bool LRUMemory::memoryFull() {
-	return (pgAccessTime.size() == globalPages);
+	return (pgNum == globalPages);
 }
 
 /*
@@ -507,6 +598,7 @@ class SCAMemory: MemoryBase {
 	deque<string> pages;
 	map<string, bool> pgMarked, pgRef;
 	map<string, long long> pgAvailTime;
+	int pgNum;
 public:
 	bool memoryFull();
 	bool accessPage(long long time, string pgName);
@@ -514,10 +606,22 @@ public:
 	bool kickOut(long long time);
 	void markBusy(string pgName);
 	void unmarkBusy(string pgName);
+	int pgNumIncrease()
+	{
+		return ++pgNum;
+	}
+	int pgNumDecrease()
+	{
+		return --pgNum;
+	}
+	int pageNum()
+	{
+		return pgNum;
+	}
 };
 
 bool SCAMemory::memoryFull() {
-	return (pages.size() == globalPages);
+	return (pgNum == globalPages);
 }
 
 void SCAMemory::markBusy(string pgName) {
@@ -535,6 +639,8 @@ bool SCAMemory::accessPage(long long time, string pgName) {
 	if (pgAvailTime[pgName] > time) {
 		return false;
 	}
+	if (pgMarked[pgName])
+		return false;
 	pgRef[pgName] = true;
 	return true;
 }
@@ -595,20 +701,31 @@ bool Memory::swapPage(long long time, string faultingProcess,
 	lastFaultProcess[faultingPage] = faultingProcess;
 	if (waitingPages.find(faultingPage) != waitingPages.end()) {
 		return true;
-	} else if (busyCount < globalPages) {
+	} else  {
 		long long arrivalTime = maxLL(time, maxtime) + globalSwap;
 		waitingPages.insert(faultingPage);
 		maxtime = arrivalTime;
-
-		mmu->kickOut(time);
+		if (time == arrivalTime - globalSwap)
+			scheduler->diskDiscardInterrupt(arrivalTime - globalSwap + 1);
+		else
+			scheduler->diskDiscardInterrupt(arrivalTime - globalSwap);
 		mmu->insertPage(arrivalTime, faultingPage);
 		mmu->markBusy(faultingPage);
 		busyCount++;
-
 		scheduler->diskInterrupt(arrivalTime, faultingPage);
 		return true;
-	} else
-		return false;
+	}
+}
+
+void Memory::kickOut(long long time)
+{
+	if (!mmu->memoryFull())
+		return;
+	busyCount--;
+	mmu->kickOut(time);
+	if (mmu->pageNum()==globalPages)
+		return;
+	pgNumDecrease();
 }
 
 /*
@@ -624,6 +741,7 @@ void Scheduler::creationInterrupt(long long time, string processName) {
  * Creat a disk interrupt, and we will handle it at that time.
  */
 void Scheduler::diskInterrupt(long long time, string pgName) {
+	//cout<<"The disk interrupt is caused at "<<time<<", page name is "<<pgName<<endl;
 	interrupts[DiskInterrupt(time)] = pgName;
 }
 
@@ -643,8 +761,8 @@ void Scheduler::handleCreationInterrupttion(long long time,
 			break;
 	}
 
-	cout << "Handle creation interrupts at time, " << time
-			<< " process name is " << currentProcess << endl;
+	//cout << "Handle creation interrupts at time, " << time
+			//<< " process name is " << currentProcess << endl;
 	readyQueue.push_back(interrupts[ProcessCreationInterrupt(time)]);
 
 	infoTable[interrupts[ProcessCreationInterrupt(time)]] = make_pair(
@@ -668,8 +786,10 @@ void Scheduler::handleDiskInterruption(long long time, string currentProcess) {
 		if ((it->first).first == time && (it->first).second == 2)
 			break;
 	}
+	//cout<<"Handle disk interrupt at "<<time<<" ";
 		string faultingPage = interrupts[DiskInterrupt(time)];
-
+		if (memory->pgNum() != globalPages)
+			memory->pgNumIncrease();
 		set<string>::iterator iter = blockedQueue.begin();
 		for (; iter != blockedQueue.end();) {
 			if (blockedPages[(*iter)] == faultingPage) {
@@ -757,7 +877,13 @@ bool Scheduler::handleInterrupts(long long time, string currentProcess) {
 			&& readyQueue.size() == 0 && blockedQueue.size() == 0
 			&& hangedQueue.size() == 0)
 		return false;
+	/*cout<<"At cycle: "<< time<<endl;
+	map<interrupt_t, Interrupt>::iterator it = interrupts.begin();
+	for(; it != interrupts.end(); it++)
+		cout<<(it->first).first<<' '<<(it->first).second<<' '<<(it->second)<<"\t";
+	cout<<endl;*/
 	handleCreationInterrupttion(time, currentProcess);
+	handleDiskDiscardInterrupt(time);
 	handleDiskInterruption(time, currentProcess);
 	handleTimerInterruption(time, currentProcess);
 
@@ -801,7 +927,7 @@ void Scheduler::pgFault(long long time, string faultingProcess,
 					|| faultQueue.size() + readyQueue.size() != 0)) {
 		return;
 	}
-
+	//cout<<"The page fault is at "<<time<<" which is caused by"<<faultingProcess<<", the page is "<<faultingPage<<endl;
 	cpu->pgFaultIncrease(faultingProcess);
 	if (infoTable[faultingProcess].second == time) {
 		interrupts.erase(TimerInterrupt(time));
@@ -821,7 +947,7 @@ void Scheduler::pgFault(long long time, string faultingProcess,
 		hangedQueue.push_back(faultingProcess);
 
 		hangedPage.push_back(faultingPage);
-		cout<<"The memory slot is full!"<<endl;
+		/*cout<<"The memory slot is full!"<<endl;
 		for (deque<string>::iterator it = hangedQueue.begin(); it != hangedQueue.end(); it++)
 			cout<<(*it)<<"    ";
 		cout<<endl;
@@ -839,9 +965,33 @@ void Scheduler::pgFault(long long time, string faultingProcess,
 		cout<<"The fault queue: "<<endl;
 		for (deque<string>::iterator it = faultQueue.begin(); it != faultQueue.end(); it++)
 			cout<<*it<<"    ";
-		cout<<endl;
+		memory->debug();
+		cout<<endl;*/
 		cpu->ContextSwitch(IDLE, time);
 	}
+}
+
+void Scheduler::diskDiscardInterrupt(long long time)
+{
+	//cout<<"Set up a disk discard at time: "<<time<<endl;
+	interrupts[DiskDiscardInterrupt(time)] = "Kick Out one page";
+}
+
+void Scheduler::handleDiskDiscardInterrupt(long long time)
+{
+	map<interrupt_t, Interrupt>::iterator it = interrupts.begin();
+	for (;;it++)
+	{
+		if ((it->first).first != time)
+		{
+			return ;
+		}
+		if ((it->first).first == time && (it->first).second == 4)
+			break;
+	}
+	//cout<<"Handle disk discard interrupt at time: "<<time<<endl;
+	memory->kickOut(time);
+	interrupts.erase(it);
 }
 
 int main(int argc, char *argv[]) {

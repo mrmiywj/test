@@ -423,7 +423,7 @@ public:
 			// new process?
 			if(fd.find(currentProcess) == fd.end()) {
 				ifstream *newFd = new ifstream;
-				string targetFile = "./Testdata/Data/"+currentProcess + ".mem";
+				string targetFile = "./Testdata/dataL/"+currentProcess + ".mem";
 				newFd->open(targetFile.c_str());
 				if(debugEnable)cout << targetFile << " opened\n";
 				fd[currentProcess] = newFd;
