@@ -168,7 +168,7 @@ public:
 
 class Scheduler {
 	//process Name ------>   blocked pages of the process
-	map<string, string> blockedPages;
+	//map<string, string> blockedPages;
 	//Process's infomation : The rest time of the quantum and the process' next timer interrupt
 	map<string, ProcessInfo> infoTable;
 	//interrupts' time and type ----> the detailed information the interrupt, such as the process name or the interrupted page name
@@ -176,7 +176,9 @@ class Scheduler {
 	//The queues which stores the faulting, hanged, ready process.
 	deque<string> faultQueue, readyQueue;
 	//blocked process
-	set<string> blockedQueue;
+	//set<string> blockedQueue;
+	int blockedNum;
+
 
 	CPU* cpu;
 	Memory* memory;
@@ -790,7 +792,10 @@ void Scheduler::handleDiskInterruption(long long time, string currentProcess) {
 		string faultingPage = interrupts[DiskInterrupt(time)];
 		if (memory->pgNum() != globalPages)
 			memory->pgNumIncrease();
-		set<string>::iterator iter = blockedQueue.begin();
+		string faultingProcess = faultingPage.substr(faultingPage.rfind("b") + 1);
+		blockedNum -= 1;
+		faultQueue.push_back(faultingProcess);
+		/*set<string>::iterator iter = blockedQueue.begin();
 		for (; iter != blockedQueue.end();) {
 			if (blockedPages[(*iter)] == faultingPage) {
 				string faultingProcess = *iter;
@@ -811,7 +816,7 @@ void Scheduler::handleDiskInterruption(long long time, string currentProcess) {
 			} else {
 				iter++;
 			}
-		}
+		}*/
 		memory->erasewaiting(faultingPage);
 
 		interrupts.erase(DiskInterrupt(time));
@@ -874,7 +879,7 @@ void Scheduler::handleTimerInterruption(long long time, string currentProcess) {
 
 bool Scheduler::handleInterrupts(long long time, string currentProcess) {
 	if (interrupts.size() == 0 && faultQueue.size() == 0
-			&& readyQueue.size() == 0 && blockedQueue.size() == 0)
+			&& readyQueue.size() == 0 && blockedNum == 0)
 		return false;
 	/*cout<<"At cycle: "<< time<<endl;
 	map<interrupt_t, Interrupt>::iterator it = interrupts.begin();
@@ -927,9 +932,9 @@ void Scheduler::pgFault(long long time, string faultingProcess,
 	}
 
 	if (memory->swapPage(time, faultingProcess, faultingPage)) {
-		blockedQueue.insert(faultingProcess);
+		blockedNum++;
 
-		blockedPages[faultingProcess] = faultingPage;
+		//blockedPages[faultingProcess] = faultingPage;
 		cpu->ContextSwitch(IDLE, time);
 	} /*else {
 		printerror("5555");
