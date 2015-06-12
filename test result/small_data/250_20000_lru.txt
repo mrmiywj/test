@@ -1,0 +1,14 @@
+---------------------------------------
+Simulation finished at cycle 525781145 with total idle time: 523964726
+The conclusion:
+P1 ends at289381, with170000 cycles for 2.82381s with100 page faults
+P10 ends at447763487, with98000 cycles for 4470.11s with62451 page faults
+P2 ends at390726485, with81000 cycles for 3906.21s with53039 page faults
+P3 ends at32421485, with5000 cycles for 322.915s with3606 page faults
+P4 ends at131003485, with23000 cycles for 1308.68s with15928 page faults
+P5 ends at525549223, with237000 cycles for 5253.95s with78141 page faults
+P6 ends at524301487, with129000 cycles for 5239.61s with77824 page faults
+P7 ends at525174619, with179000 cycles for 5248.01s with78023 page faults
+P8 ends at525781144, with135000 cycles for 5252.09s with78157 page faults
+P9 ends at525769620, with234000 cycles for 5250.22s with78120 page faults
+Total page faults:525389
