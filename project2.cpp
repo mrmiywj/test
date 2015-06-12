@@ -58,11 +58,17 @@ int globalPages = 75;
 int globalSwap = 1000;
 int globalCyclesPerSec = 100000;
 
+/*
+ * Used for debug
+ */
 void printerror(string msg) {
 	cout << endl << msg << endl;
 	exit(0);
 }
 
+/*
+ * calculate the prefix of the file
+ */
 string prefix(string path)
 {
 	int pos = path.rfind("/");
@@ -99,9 +105,6 @@ public:
 	virtual void unmarkBusy(string pgName) {
 		ERR
 	}
-
-
-
 	virtual int pgNumIncrease(){
 		ERR
 	}
@@ -290,6 +293,9 @@ void CPU::ContextSwitch(string newProcess, long long newProcessStartTime) {
 	nextMem = SOP;
 }
 
+/*
+ * The main loop of the project. Simulating the CPU's behavior at each cycle(loop).
+ */
 void CPU::simulate() {
 	currentProcess = IDLE;
 	idleCycle = 0;
@@ -541,6 +547,10 @@ void LRUMemory::unmarkBusy(string pgName) {
 	pgMarked[pgName] = false;
 }
 
+/*
+ * Access the page in the main memory. If the current time is greater than available time and
+ * this page is not marked, update the information stored.
+ */
 bool LRUMemory::accessPage(long long time, string pgName) {
 	if (pgAvailTime.find(pgName) == pgAvailTime.end())
 		return false;
@@ -679,8 +689,9 @@ bool SCAMemory::kickOut(long long time) {
 	while (pgMarked[(*it)] || pgAvailTime[(*it)] > time || pgRef[(*it)]) {
 		if (!(pgMarked[(*it)] || pgAvailTime[(*it)] > time))
 			pgRef[(*it)] = false;
-		pages.push_back(*it);
 		pages.erase(it);
+		string pgName = *it;
+		pages.push_back(*it);
 		it = pages.begin();
 	}
 
@@ -818,6 +829,9 @@ bool Memory::swapPage(long long time, string faultingProcess,
 	}
 }
 
+/*
+ * Kick out one page in the memory and then udpate the page number.
+ */
 void Memory::kickOut(long long time)
 {
 	if (!mmu->memoryFull())
@@ -922,6 +936,8 @@ void Scheduler::handleDiskInterruption(long long time, string currentProcess) {
 
 }
 
+//handle the timer interrupt. The timer interrupt means that the current process quantum has expired
+//We should pick up another process to run.
 void Scheduler::handleTimerInterruption(long long time, string currentProcess) {
 	if (currentProcess != IDLE)
 	{
@@ -960,6 +976,7 @@ void Scheduler::handleTimerInterruption(long long time, string currentProcess) {
 			infoTable[currentProcess].first = globalQuantum;
 			readyQueue.push_back(currentProcess);
 		}
+		//update the infortamion of current process.
 		long long restTime = time + globalContextSwitch
 				+ infoTable[nextProcess].first;
 		if (infoTable[nextProcess].first == 0) {
@@ -1012,6 +1029,8 @@ bool Scheduler::hasInterrupts(long long time) {
 		return false;
 }
 
+//The simulator meets a page fault. The sheduler will update the information of interrupts.
+//Then will ask the memory to handle page fault.
 void Scheduler::pgFault(long long time, string faultingProcess,
 		string faultingPage) {
 	if ((infoTable[faultingProcess].second == time)
@@ -1070,6 +1089,8 @@ void Scheduler::diskDiscardInterrupt(long long time)
 	interrupts[DiskDiscardInterrupt(time)] = "Kick Out one page";
 }
 
+//The memory will begin to carry a page from the disk. It should choose a page in the physical memory to kick out.
+//So I create a interrupt at very beginning of disk interrrupt to discard a page.
 void Scheduler::handleDiskDiscardInterrupt(long long time)
 {
 	map<interrupt_t, Interrupt>::iterator it = interrupts.begin();
